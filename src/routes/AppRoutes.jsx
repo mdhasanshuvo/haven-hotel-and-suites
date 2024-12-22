@@ -4,7 +4,7 @@ import { createBrowserRouter } from 'react-router-dom';
 const AppRoutes = createBrowserRouter([
     {
         path: "/",
-        element: <div>Hello world!</div>,
+        element: <div className='text-3xl'>Hello world!</div>,
     },
 ]);
 

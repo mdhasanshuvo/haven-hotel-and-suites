@@ -5,6 +5,7 @@ import UserReviews from '../components/UserReviews';
 import SpecialOffers from '../components/SpecialOffers ';
 import HotelFacilities from '../components/HotelFacilities';
 import Countdown from '../components/Countdown';
+import HotelMap from '../components/Map';
 
 const Home = () => {
     return (
@@ -15,6 +16,7 @@ const Home = () => {
             <UserReviews></UserReviews>
             <SpecialOffers></SpecialOffers>
             <HotelFacilities></HotelFacilities>
+            <HotelMap></HotelMap>
         </div>
     );
 };

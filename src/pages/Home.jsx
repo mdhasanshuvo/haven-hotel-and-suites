@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import SliderBanner from '../components/SliderBanner';
 import FeaturedRooms from '../components/FeaturedRooms ';
 import UserReviews from '../components/UserReviews';
@@ -8,6 +8,7 @@ import Countdown from '../components/Countdown';
 import HotelMap from '../components/Map';
 
 const Home = () => {
+
     return (
         <div>
             <SliderBanner></SliderBanner>

@@ -35,7 +35,7 @@ const Navbar = () => {
                         {lists}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">Haven Hotel & Suites</a>
+                <a className="btn btn-ghost text-base sm:text-xl font-bold text-primary px-1 sm:px-4">Haven Hotel & Suites</a>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -45,7 +45,7 @@ const Navbar = () => {
             <div className="navbar-end">
                 <Link
                     to="/auth/login"
-                    className="btn btn-accent sm:px-5 text-white rounded-lg min-h-9 h-9 text-sm"
+                    className="btn btn-accent px-2 sm:px-5 text-white rounded-lg min-h-9 h-9 text-sm"
                 >
                     Login / Register
                 </Link>

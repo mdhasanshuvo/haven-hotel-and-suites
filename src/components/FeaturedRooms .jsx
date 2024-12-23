@@ -12,7 +12,7 @@ const rooms = [
 
 const FeaturedRooms = () => {
   return (
-    <div className="my-16 lg:my-32 px-4 text-center">
+    <div className="my-16 lg:my-32 px-4 text-center container mx-auto">
       <h2 className="text-3xl font-bold">Featured Rooms</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {rooms.map((room, index) => (

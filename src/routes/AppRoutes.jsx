@@ -6,6 +6,9 @@ import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ErrorPage from '../pages/ErrorPage';
 import Rooms from '../pages/Rooms';
+import RoomDetails from '../pages/RoomDetails';
+import AboutUs from '../pages/AboutUs';
+import ContactUs from '../pages/ContactUs';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -19,6 +22,18 @@ const AppRoutes = createBrowserRouter([
             {
                 path: '/rooms',
                 element: <Rooms></Rooms>
+            },
+            {
+                path: '/rooms/:id',
+                element: <RoomDetails></RoomDetails>,
+            },
+            {
+                path: '/about',
+                element: <AboutUs></AboutUs>
+            },
+            {
+                path: '/contact',
+                element: <ContactUs></ContactUs>
             },
             {
                 path: '/auth/login',

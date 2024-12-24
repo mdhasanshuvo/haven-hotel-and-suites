@@ -11,12 +11,16 @@ const Navbar = () => {
             <li><NavLink to='/rooms'>Rooms</NavLink></li>
             <li><NavLink to='/about'>About Us</NavLink></li>
             <li><NavLink to='/contact'>Contact</NavLink></li>
-            <li><NavLink to='/my-bookings'>My Bookings</NavLink></li>
+            {
+                user && <>
+                    <li><NavLink to='/my-bookings'>My Bookings</NavLink></li>
+                </>
+            }
         </>
     );
 
     const { pathname } = useLocation();
-    
+
     return (
         <div className={`bg-base-100 ${pathname === '/auth/login' || pathname === '/auth/register' ? 'h-36' : ''} container mx-auto px-2`}>
             <div className="navbar">

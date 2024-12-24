@@ -9,6 +9,7 @@ import Rooms from '../pages/Rooms';
 import RoomDetails from '../pages/RoomDetails';
 import AboutUs from '../pages/AboutUs';
 import ContactUs from '../pages/ContactUs';
+import MyBookings from '../pages/MyBookings';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -34,6 +35,10 @@ const AppRoutes = createBrowserRouter([
             {
                 path: '/contact',
                 element: <ContactUs></ContactUs>
+            },
+            {
+                path: '/my-bookings',
+                element: <MyBookings></MyBookings>
             },
             {
                 path: '/auth/login',

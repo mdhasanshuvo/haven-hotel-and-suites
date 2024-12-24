@@ -20,17 +20,28 @@ const RoomDetails = () => {
         price: 0,
         roomName: '',
     });
+    const [reviews, setReviews] = useState([]); // State to store reviews
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
+        // Fetch the room data
         axios.get(`http://localhost:5000/rooms/${id}`)
             .then(response => {
                 setRoom(response.data);
             })
             .catch(error => {
                 console.error('Error fetching room data:', error);
+            });
+
+        // Fetch reviews for the room
+        axios.get(`http://localhost:5000/reviews/${id}`)
+            .then(response => {
+                setReviews(response.data);
+            })
+            .catch(error => {
+                console.error('Error fetching reviews:', error);
             });
     }, [id]);
 
@@ -115,13 +126,64 @@ const RoomDetails = () => {
                             </button>
                         </div>
                     </div>
-                    {room?.totalReviews === 0 ? (
-                        <p className="text-center mt-6">No reviews available for this room yet.</p>
-                    ) : (
-                        <div className="mt-6">
-                            {/* Render reviews here */}
-                        </div>
-                    )}
+
+                    {/* Reviews Section */}
+                    <div className="m-8">
+                        <h2 className="text-3xl font-semibold text-primary mb-6">Customer Reviews</h2>
+                        {reviews.length === 0 ? (
+                            <p className="text-center text-lg text-gray-500">No reviews available for this room yet.</p>
+                        ) : (
+                            <div className="space-y-6">
+                                {reviews.map((review) => (
+                                    <div key={review._id} className="flex flex-col md:flex-row border p-6 rounded-lg shadow-lg bg-white">
+                                        {/* User Avatar */}
+                                        <div className="w-16 h-16 rounded-full overflow-hidden mr-4 mb-4 md:mb-0">
+                                            <img
+                                                src={'https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png'} 
+                                                alt={review?.review?.username}
+                                                className="w-full h-full object-cover"
+                                            />
+                                        </div>
+
+                                        {/* Review Content */}
+                                        <div className="flex-1">
+                                            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-2">
+                                                <h3 className="text-xl font-semibold text-primary">{review?.review?.username}</h3>
+                                                <div className="flex items-center">
+                                                    {/* Star Rating */}
+                                                    <span className="flex text-yellow-500">
+                                                        {[...Array(5)].map((_, i) => (
+                                                            <svg
+                                                                key={i}
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill={i < review?.review?.rating ? 'currentColor' : 'none'}
+                                                                viewBox="0 0 24 24"
+                                                                stroke="currentColor"
+                                                                strokeWidth="2"
+                                                                className="w-5 h-5 mr-1"
+                                                            >
+                                                                <path
+                                                                    fillRule="evenodd"
+                                                                    d="M12 17.5l-6.16 3.24 1.67-7.18L1 7.76l7.19-.61L12 0l3.81 6.15 7.19.61-5.51 5.8 1.67 7.18L12 17.5z"
+                                                                    clipRule="evenodd"
+                                                                />
+                                                            </svg>
+                                                        ))}
+                                                    </span>
+                                                    <span className="text-gray-500 ml-2">({review?.review?.rating})</span>
+                                                </div>
+                                            </div>
+
+                                            {/* Review Comment */}
+                                            <p className="text-lg text-gray-700">{review?.review?.comment}</p>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        )}
+                    </div>
+
+
                 </div>
             </main>
 
@@ -166,7 +228,7 @@ const RoomDetails = () => {
                                 </button>
                                 <button
                                     type="button"
-                                    className="btn btn-outline w-1/2 py-3 rounded-lg text-gray-700 font-semibold text-lg hover:bg-gray-100 border-2 border-gray-300 transition duration-300"
+                                    className="btn btn-secondary w-1/2 py-3 rounded-lg text-white font-semibold text-lg hover:bg-gray-600 transition duration-300"
                                     onClick={() => setModalOpen(false)}
                                 >
                                     Cancel

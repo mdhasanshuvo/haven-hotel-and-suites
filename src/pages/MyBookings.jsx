@@ -2,9 +2,9 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
-import 'react-datepicker/dist/react-datepicker.css';
-import DatePicker from 'react-date-picker';
+import 'react-datepicker/dist/react-datepicker.css'; 
 import Rating from 'react-rating'; // For implementing rating input
+import DatePicker from 'react-datepicker';
 
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
@@ -75,10 +75,12 @@ const MyBookings = () => {
             return;
         }
 
-        axios.put(`http://localhost:5000/bookings/${updatingBookingId}`, {
-            startDate,
-            endDate,
-        })
+        const updatedDate = {
+            start : startDate.toISOString().split('T')[0],
+            end: endDate.toISOString().split('T')[0],
+        }
+
+        axios.put(`http://localhost:5000/bookings/${updatingBookingId}`, updatedDate)
             .then(() => {
                 alert('Booking updated successfully!');
                 setIsModalOpen(false);

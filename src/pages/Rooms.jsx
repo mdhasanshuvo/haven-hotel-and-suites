@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Loading from './Loading';
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -16,6 +17,7 @@ const Rooms = () => {
   const handleRoomClick = (roomId) => {
     navigate(`/rooms/${roomId}`); 
   };
+
 
   return (
     <div className="bg-gray-50 min-h-screen py-10 lg:py-16">

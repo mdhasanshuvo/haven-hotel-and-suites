@@ -5,6 +5,7 @@ import Home from '../pages/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
 import ErrorPage from '../pages/ErrorPage';
+import Rooms from '../pages/Rooms';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -14,6 +15,10 @@ const AppRoutes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/rooms',
+                element: <Rooms></Rooms>
             },
             {
                 path: '/auth/login',

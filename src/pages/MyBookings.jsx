@@ -108,7 +108,8 @@ const MyBookings = () => {
                 bookingId: reviewBookingId,
                 roomId: reviewRoomId,
                 review: {
-                    username: user.email,
+                    username: user.displayName,
+                    userPhoto: user.photoURL,
                     rating: reviewData.rating,
                     comment: reviewData.comment,
                     timestamp: new Date(),

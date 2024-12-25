@@ -153,38 +153,38 @@ const MyBookings = () => {
                     <table className="min-w-full table-auto bg-white border border-gray-200 rounded-lg shadow-md">
                         <thead>
                             <tr className="bg-gray-100 text-left text-sm font-medium text-gray-600">
-                                <th className="px-6 py-4">Name</th>
-                                <th className="px-6 py-4">Price</th>
-                                <th className="px-6 py-4">Booking Date</th>
-                                <th className="px-6 py-4">Actions</th>
+                                <th className="px-3 py-2 sm:px-6 sm:py-4">Name</th>
+                                <th className="px-3 py-2 sm:px-6 sm:py-4">Price</th>
+                                <th className="px-3 py-2 sm:px-6 sm:py-4">Booking Date</th>
+                                <th className="px-3 py-2 sm:px-6 sm:py-4">Actions</th>
                             </tr>
                         </thead>
                         <tbody className="text-sm text-gray-700">
                             {bookings.map((booking) => (
                                 <tr key={booking._id} className="border-t hover:bg-gray-50">
-                                    <td className="px-6 py-4">{booking?.roomName}</td>
-                                    <td className="px-6 py-4">${booking?.price}</td>
-                                    <td className="px-6 py-4">
+                                    <td className="px-3 py-2 sm:px-6 sm:py-4">{booking?.roomName}</td>
+                                    <td className="px-3 py-2 sm:px-6 sm:py-4">${booking?.price}</td>
+                                    <td className="px-3 py-2 sm:px-6 sm:py-4">
                                         {booking?.startDate} to {booking?.endDate}
                                     </td>
-                                    <td className="px-6 py-4 space-x-2">
+                                    <td className="px-3 py-2 sm:px-6 sm:py-4 space-x-2 flex flex-col sm:flex-row items-center gap-1">
                                         <button
                                             onClick={() => handleCancelBooking(booking?._id)}
-                                            className="px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg transition-all duration-200"
+                                            className="px-2 sm:px-4 py-1 sm:py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg transition-all duration-200"
                                         >
                                             Cancel
                                         </button>
                                         <button
                                             onClick={() => openReviewModal(booking?._id, booking?.roomId)}
-                                            className="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-all duration-200"
+                                            className="px-2 sm:px-4 py-1 sm:py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg transition-all duration-200"
                                         >
                                             Review
                                         </button>
                                         <button
                                             onClick={() => handleUpdateDate(booking._id)}
-                                            className="px-4 py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition-all duration-200"
+                                            className="px-2 sm:px-4 py-1 sm:py-2 text-white bg-yellow-500 hover:bg-yellow-600 rounded-lg transition-all duration-200"
                                         >
-                                            Update Date
+                                            Update
                                         </button>
                                     </td>
                                 </tr>

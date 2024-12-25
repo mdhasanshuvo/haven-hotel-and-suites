@@ -11,7 +11,7 @@ const SpecialOffers = () => {
             image: 'https://www.estadiahotel.com/public/offer/images/20190701_EST_Website_FamilyPackage_Thumbnail-01.jpg',
         },
         {
-            title: 'Weekend: 2 Nights for the Price 1',
+            title: 'Weekend: 2 Nights for 1 Price',
             description: 'Enjoy a relaxing weekend escape with our exclusive weekend offer.',
             image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW1jGewIRrOgm17lmfzU_hVUb6PN7QTvld1g&s',
         },

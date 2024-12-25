@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from '../provider/AuthProvider';
 import Swal from 'sweetalert2';
-import 'react-datepicker/dist/react-datepicker.css'; 
+import 'react-datepicker/dist/react-datepicker.css';
 import Rating from 'react-rating'; // For implementing rating input
 import DatePicker from 'react-datepicker';
 
@@ -71,25 +71,50 @@ const MyBookings = () => {
 
     const handleConfirmUpdate = () => {
         if (!startDate || !endDate) {
-            alert('Please select both start and end dates.');
+            Swal.fire({
+                icon: 'warning',
+                title: 'Missing Dates',
+                text: 'Please select both start and end dates.',
+                confirmButtonText: 'OK'
+            });
             return;
         }
 
         const updatedDate = {
-            start : startDate.toISOString().split('T')[0],
+            start: startDate.toISOString().split('T')[0],
             end: endDate.toISOString().split('T')[0],
-        }
+        };
 
         axios.put(`https://hotel-booking-server-two.vercel.app/bookings/${updatingBookingId}`, updatedDate)
             .then(() => {
-                alert('Booking updated successfully!');
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success!',
+                    text: 'Booking updated successfully!',
+                    confirmButtonText: 'OK'
+                });
+
+                setBookings((prevBookings) =>
+                    prevBookings.map((booking) =>
+                        booking._id === updatingBookingId
+                            ? { ...booking, startDate: updatedDate.start, endDate: updatedDate.end }
+                            : booking
+                    )
+                );
+
                 setIsModalOpen(false);
                 setUpdatingBookingId(null);
             })
             .catch(() => {
-                alert('Error updating booking. Please try again.');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Update Failed',
+                    text: 'Error updating booking. Please try again.',
+                    confirmButtonText: 'OK'
+                });
             });
     };
+
 
     const openReviewModal = (bookingId, reviewRoomId) => {
         setReviewBookingId(bookingId);
@@ -128,7 +153,7 @@ const MyBookings = () => {
 
     return (
         <div className='bg-slate-50'>
-            <div className="container mx-auto px-4 py-8 min-h-[70vh]">
+            <div className="container mx-auto px-4 py-8 min-h-[73vh]">
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-3xl font-semibold text-primary">My Bookings</h1>
                     <div className="flex items-center space-x-2">

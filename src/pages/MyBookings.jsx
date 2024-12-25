@@ -25,7 +25,7 @@ const MyBookings = () => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`http://localhost:5000/bookings/${user.email}`)
+                .get(`https://hotel-booking-server-two.vercel.app/bookings/${user.email}`)
                 .then((response) => {
                     setBookings(response.data);
                 })
@@ -46,7 +46,7 @@ const MyBookings = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:5000/bookings/${bookingId}`)
+                    .delete(`https://hotel-booking-server-two.vercel.app/bookings/${bookingId}`)
                     .then(() => {
                         setBookings(bookings.filter((booking) => booking._id !== bookingId));
                         Swal.fire('Cancelled!', 'Your booking has been cancelled.', 'success');
@@ -80,7 +80,7 @@ const MyBookings = () => {
             end: endDate.toISOString().split('T')[0],
         }
 
-        axios.put(`http://localhost:5000/bookings/${updatingBookingId}`, updatedDate)
+        axios.put(`https://hotel-booking-server-two.vercel.app/bookings/${updatingBookingId}`, updatedDate)
             .then(() => {
                 alert('Booking updated successfully!');
                 setIsModalOpen(false);
@@ -104,7 +104,7 @@ const MyBookings = () => {
         }
 
         axios
-            .post('http://localhost:5000/reviews', {
+            .post('https://hotel-booking-server-two.vercel.app/reviews', {
                 bookingId: reviewBookingId,
                 roomId: reviewRoomId,
                 review: {
@@ -284,7 +284,7 @@ const MyBookings = () => {
                                 <label className="text-sm font-medium text-gray-700">Username</label>
                                 <input
                                     type="text"
-                                    value={user?.email}
+                                    value={user?.displayName}
                                     readOnly
                                     className="input input-bordered w-full border-2 border-gray-300 rounded-md p-2 bg-gray-100"
                                 />

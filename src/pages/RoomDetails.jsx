@@ -27,7 +27,7 @@ const RoomDetails = () => {
 
     useEffect(() => {
         // Fetch the room data
-        axios.get(`http://localhost:5000/rooms/${id}`)
+        axios.get(`https://hotel-booking-server-two.vercel.app/rooms/${id}`)
             .then(response => {
                 setRoom(response.data);
             })
@@ -36,7 +36,7 @@ const RoomDetails = () => {
             });
 
         // Fetch reviews for the room
-        axios.get(`http://localhost:5000/reviews/${id}`)
+        axios.get(`https://hotel-booking-server-two.vercel.app/reviews/${id}`)
             .then(response => {
                 setReviews(response.data);
             })
@@ -77,7 +77,7 @@ const RoomDetails = () => {
             endDate: selectedEndDate.toISOString().split('T')[0],
         };
 
-        axios.post('http://localhost:5000/bookings', bookingDetails)
+        axios.post('https://hotel-booking-server-two.vercel.app/bookings', bookingDetails)
             .then(response => {
                 Swal.fire('Success', 'Your room has been booked!', 'success');
                 setModalOpen(false);

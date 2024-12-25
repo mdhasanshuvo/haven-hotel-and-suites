@@ -7,7 +7,7 @@ const UserReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/review')
+    axios.get('https://hotel-booking-server-two.vercel.app/review')
       .then(response => {
         setReviews(response.data); // Ensure the data is sorted as per the backend
       })
@@ -51,7 +51,26 @@ const UserReviews = () => {
                     alt={item?.review?.username}
                   />
                 </div>
-                <p className="text-xl text-gray-600 italic mb-4">"{item?.review?.comment}"</p>
+                <span className="flex text-yellow-500">
+                  {[...Array(5)].map((_, i) => (
+                    <svg
+                      key={i}
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill={i < item?.review?.rating ? 'currentColor' : 'none'}
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      className="w-3 h-3 mr-1"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M12 17.5l-6.16 3.24 1.67-7.18L1 7.76l7.19-.61L12 0l3.81 6.15 7.19.61-5.51 5.8 1.67 7.18L12 17.5z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  ))}
+                </span>
+                <p className="text-xl text-gray-600 italic mb-3">"{item?.review?.comment}"</p>
                 <h3 className="text-xl font-semibold text-gray-800">{item?.review?.username}</h3>
                 <p className="text-sm text-gray-500">"Bangladesh"</p>
               </div>

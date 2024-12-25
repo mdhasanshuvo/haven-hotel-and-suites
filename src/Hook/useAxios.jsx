@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 
 const axiosInstance = axios.create({
-    baseURL: 'https://hotel-booking-server-two.vercel.app',
+    baseURL: 'http://localhost:5000',
     withCredentials: true
 })
 

@@ -25,6 +25,8 @@ const MyBookings = () => {
 
     const axiosSecure = useAxios();
 
+    console.log(bookings,user.email)
+
     useEffect(() => {
         if (user) {
             axiosSecure
@@ -49,7 +51,7 @@ const MyBookings = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`https://hotel-booking-server-two.vercel.app/bookings/${bookingId}`)
+                    .delete(`http://localhost:5000/bookings/${bookingId}`)
                     .then(() => {
                         setBookings(bookings.filter((booking) => booking._id !== bookingId));
                         Swal.fire('Cancelled!', 'Your booking has been cancelled.', 'success');
@@ -88,7 +90,7 @@ const MyBookings = () => {
             end: endDate.toISOString().split('T')[0],
         };
 
-        axios.put(`https://hotel-booking-server-two.vercel.app/bookings/${updatingBookingId}`, updatedDate)
+        axios.put(`http://localhost:5000/bookings/${updatingBookingId}`, updatedDate)
             .then(() => {
                 Swal.fire({
                     icon: 'success',
@@ -132,7 +134,7 @@ const MyBookings = () => {
         }
 
         axios
-            .post('https://hotel-booking-server-two.vercel.app/reviews', {
+            .post('http://localhost:5000/reviews', {
                 bookingId: reviewBookingId,
                 roomId: reviewRoomId,
                 review: {

@@ -9,7 +9,7 @@ const Rooms = () => {
 
   useEffect(() => {
     axios
-      .get('https://hotel-booking-server-two.vercel.app/rooms')
+      .get('http://localhost:5000/rooms')
       .then((response) => setRooms(response.data))
       .catch((error) => console.error('Error fetching rooms:', error));
   }, []);

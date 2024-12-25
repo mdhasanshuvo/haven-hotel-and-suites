@@ -6,7 +6,7 @@ const FeaturedRooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    axios.get('https://hotel-booking-server-two.vercel.app/featured-rooms')
+    axios.get('http://localhost:5000/featured-rooms')
       .then((response) => {
         setRooms(response.data);
       })

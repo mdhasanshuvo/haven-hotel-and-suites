@@ -20,14 +20,16 @@ const RoomDetails = () => {
         price: 0,
         roomName: '',
     });
-    const [reviews, setReviews] = useState([]); // State to store reviews
+    const [isRoomBooked, setIsRoomBooked] = useState(false);
+    const [reviews, setReviews] = useState([]);
+
 
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch the room data
-        axios.get(`https://hotel-booking-server-two.vercel.app/rooms/${id}`)
+        axios.get(`http://localhost:5000/rooms/${id}`)
             .then(response => {
                 setRoom(response.data);
             })
@@ -36,7 +38,7 @@ const RoomDetails = () => {
             });
 
         // Fetch reviews for the room
-        axios.get(`https://hotel-booking-server-two.vercel.app/reviews/${id}`)
+        axios.get(`http://localhost:5000/reviews/${id}`)
             .then(response => {
                 setReviews(response.data);
             })
@@ -44,6 +46,16 @@ const RoomDetails = () => {
                 console.error('Error fetching reviews:', error);
             });
     }, [id]);
+
+    // console.error(room,room?._id);
+    useEffect(() => {
+        if (room) {
+            axios
+                .get(`http://localhost:5000/booking/${room?._id}`)
+                .then((response) => setIsRoomBooked(response.data.isBooked))
+                .catch((error) => console.error('Error checking room booking status:', error));
+        }
+    }, [room]);
 
     const handleBookingClick = () => {
         if (!user) {
@@ -77,7 +89,7 @@ const RoomDetails = () => {
             endDate: selectedEndDate.toISOString().split('T')[0],
         };
 
-        axios.post('https://hotel-booking-server-two.vercel.app/bookings', bookingDetails)
+        axios.post('http://localhost:5000/bookings', bookingDetails)
             .then(response => {
                 Swal.fire('Success', 'Your room has been booked!', 'success');
                 setModalOpen(false);
@@ -118,12 +130,23 @@ const RoomDetails = () => {
                                     <strong>Capacity:</strong> {room?.capacity} people
                                 </li>
                             </ul>
-                            <button
-                                className="btn btn-primary w-full mt-6"
-                                onClick={handleBookingClick}
-                            >
-                                Book Now
-                            </button>
+                            <div>
+                                {!isRoomBooked ? (
+                                    <button
+                                        className="btn btn-primary w-full mt-6"
+                                        onClick={handleBookingClick}
+                                    >
+                                        Book Now
+                                    </button>
+                                ) : (
+                                    <button
+                                        className="btn btn-secondary w-full mt-6 cursor-not-allowed"
+                                        disabled
+                                    >
+                                        Already Booked
+                                    </button>
+                                )}
+                            </div>
                         </div>
                     </div>
 

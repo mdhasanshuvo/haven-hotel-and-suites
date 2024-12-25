@@ -7,7 +7,7 @@ const ContactUs = () => {
       {/* Hero Section */}
       <section className="relative">
         <div className="absolute top-0 left-0 w-full h-full bg-black bg-[url('https://img.freepik.com/premium-photo/abstract-blur-luxury-hotel-lobby-background_1339-98418.jpg')] bg-cover bg-center"></div>
-        <div className="relative z-10 text-center text-black py-20">
+        <div className="relative text-center text-black py-20">
           <h1 className="text-5xl font-extrabold leading-tight">
             Get in Touch With Us
           </h1>

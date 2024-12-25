@@ -44,13 +44,6 @@ const AuthProvider = ({ children }) => {
         return updateProfile(auth.currentUser, updatedData);
     }
 
-    const resetPassword = (email) => {
-        setLoading(true);
-        return sendPasswordResetEmail(auth, email)
-            .finally(() => setLoading(false));
-    };
-
-
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -95,7 +88,6 @@ const AuthProvider = ({ children }) => {
         googleAuth,
         loading,
         updateUser,
-        resetPassword,
         email,
         setEmail,
     }

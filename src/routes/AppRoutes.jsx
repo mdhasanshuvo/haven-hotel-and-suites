@@ -10,6 +10,7 @@ import RoomDetails from '../pages/RoomDetails';
 import AboutUs from '../pages/AboutUs';
 import ContactUs from '../pages/ContactUs';
 import MyBookings from '../pages/MyBookings';
+import PrivateRoute from './PrivateRoute';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -38,7 +39,7 @@ const AppRoutes = createBrowserRouter([
             },
             {
                 path: '/my-bookings',
-                element: <MyBookings></MyBookings>
+                element: <PrivateRoute><MyBookings></MyBookings></PrivateRoute>
             },
             {
                 path: '/auth/login',

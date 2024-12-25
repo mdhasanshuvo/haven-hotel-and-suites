@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import 'react-datepicker/dist/react-datepicker.css';
 import Rating from 'react-rating'; // For implementing rating input
 import DatePicker from 'react-datepicker';
+import useAxios from '../Hook/useAxios';
 
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
@@ -22,12 +23,12 @@ const MyBookings = () => {
     const [reviewRoomId, setReviewRoomId] = useState(null);
     const [isTableView, setIsTableView] = useState(true);
 
+    const axiosSecure = useAxios();
+
     useEffect(() => {
         if (user) {
-            axios
-                .get(`https://hotel-booking-server-two.vercel.app/bookings/${user.email}`,{
-                    withCredentials: true,
-                })
+            axiosSecure
+                .get(`/bookings/${user.email}`)
                 .then((response) => {
                     setBookings(response.data);
                 })

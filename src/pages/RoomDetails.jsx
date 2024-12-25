@@ -216,31 +216,64 @@ const RoomDetails = () => {
                     <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-lg transform transition-all duration-500 ease-in-out scale-95 hover:scale-100">
                         <div className="p-8">
                             <h2 className="text-3xl font-semibold text-primary mb-6 text-center">Room Booking Summary</h2>
-                            <p className="text-lg text-gray-800 mb-4"><strong>Room:</strong> {bookingData.roomName}</p>
-                            <p className="text-lg text-gray-800 mb-6"><strong>Price:</strong> ${bookingData.price}</p>
 
+                            {/* Room Details */}
+                            <div className="mb-6">
+                                <img
+                                    src={room?.images?.[0]}
+                                    alt={room?.name}
+                                    className="rounded-lg w-full h-48 object-cover mb-4"
+                                />
+                                <p className="text-lg font-semibold text-gray-900 mb-2">{room?.name}</p>
+                                <p className="text-sm text-gray-600 mb-2">{room?.description}</p>
+                                <p className="text-sm text-gray-600 mb-2">
+                                    <strong>Type:</strong> {room?.type}
+                                </p>
+                                <p className="text-sm text-gray-600 mb-2">
+                                    <strong>Capacity:</strong> Up to {room?.capacity} guests
+                                </p>
+                                <p className="text-sm text-gray-600 mb-2">
+                                    <strong>Price:</strong> ${room?.price} per night
+                                </p>
+                                <p className="text-sm text-gray-600 mb-4">
+                                    <strong>Reviews:</strong> {room?.totalReviews} Reviews
+                                </p>
+                            </div>
+
+                            {/* Amenities */}
+                            <div className="mb-6">
+                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Amenities:</h3>
+                                <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
+                                    {room?.amenities?.map((amenity, index) => (
+                                        <li key={index}>{amenity}</li>
+                                    ))}
+                                </ul>
+                            </div>
+
+                            {/* Booking Date Range */}
                             <div className="mb-6">
                                 <label className="block text-sm font-medium text-gray-700 mb-2">Select Booking Date Range</label>
                                 <div className="flex space-x-4">
                                     <DatePicker
                                         selected={selectedStartDate}
-                                        onChange={date => setSelectedStartDate(date)}  // Start date handler
+                                        onChange={(date) => setSelectedStartDate(date)} // Start date handler
                                         dateFormat="yyyy/MM/dd"
                                         className="input input-bordered w-full border-2 border-gray-300 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                                        minDate={new Date()}  // Disable past dates
+                                        minDate={new Date()} // Disable past dates
                                         placeholderText="Start Date"
                                     />
                                     <DatePicker
                                         selected={selectedEndDate}
-                                        onChange={date => setSelectedEndDate(date)}  // End date handler
+                                        onChange={(date) => setSelectedEndDate(date)} // End date handler
                                         dateFormat="yyyy/MM/dd"
                                         className="input input-bordered w-full border-2 border-gray-300 rounded-md p-3 text-lg focus:outline-none focus:ring-2 focus:ring-primary"
-                                        minDate={selectedStartDate ? selectedStartDate : new Date()}  // Disable dates before the start date
+                                        minDate={selectedStartDate || new Date()} // Disable dates before the start date
                                         placeholderText="End Date"
                                     />
                                 </div>
                             </div>
 
+                            {/* Action Buttons */}
                             <div className="flex justify-between mt-8">
                                 <button
                                     type="button"
@@ -261,6 +294,9 @@ const RoomDetails = () => {
                     </div>
                 </div>
             )}
+
+
+
         </div>
     );
 };

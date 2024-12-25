@@ -25,8 +25,6 @@ const MyBookings = () => {
 
     const axiosSecure = useAxios();
 
-    console.log(bookings,user.email)
-
     useEffect(() => {
         if (user) {
             axiosSecure

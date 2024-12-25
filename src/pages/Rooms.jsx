@@ -1,23 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import Loading from './Loading';
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
+  const [minPrice, setMinPrice] = useState('');
+  const [maxPrice, setMaxPrice] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios
-      .get('http://localhost:5000/rooms')
-      .then((response) => setRooms(response.data))
-      .catch((error) => console.error('Error fetching rooms:', error));
-  }, []);
+    // Fetch rooms with price filter if available
+    const fetchRooms = () => {
+      axios
+        .get('http://localhost:5000/rooms', {
+          params: {
+            minPrice,  
+            maxPrice,  
+          },
+        })
+        .then((response) => setRooms(response.data)) // Set the response data
+        .catch((error) => console.error('Error fetching rooms:', error));
+    };
+
+    fetchRooms(); 
+  }, [minPrice, maxPrice]);
 
   const handleRoomClick = (roomId) => {
-    navigate(`/rooms/${roomId}`); 
+    navigate(`/rooms/${roomId}`);
   };
-
 
   return (
     <div className="bg-gray-50 min-h-screen py-10 lg:py-16">
@@ -25,6 +35,40 @@ const Rooms = () => {
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Explore Our Rooms 🛌
         </h2>
+
+        {/* Price Filter Section */}
+        <div className="mb-8 flex justify-center space-x-6">
+          <div>
+            <label className="text-lg font-medium text-gray-700">Min Price</label>
+            <input
+              type="number"
+              value={minPrice}
+              onChange={(e) => setMinPrice(e.target.value)} 
+              className="input input-bordered w-full max-w-xs"
+              placeholder="Min Price"
+            />
+          </div>
+
+          <div>
+            <label className="text-lg font-medium text-gray-700">Max Price</label>
+            <input
+              type="number"
+              value={maxPrice}
+              onChange={(e) => setMaxPrice(e.target.value)}
+              className="input input-bordered w-full max-w-xs"
+              placeholder="Max Price"
+            />
+          </div>
+
+          <button
+            onClick={() => { setMinPrice(''); setMaxPrice(''); }} // Reset filter
+            className="btn btn-primary mt-6"
+          >
+            Reset Filter
+          </button>
+        </div>
+
+        {/* Rooms List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {rooms.map((room) => (
             <div

@@ -6,12 +6,9 @@ const FeaturedRooms = () => {
   const [rooms, setRooms] = useState([]);
 
   useEffect(() => {
-    // Fetch rooms data using axios
-    axios.get('http://localhost:5000/rooms')
+    axios.get('http://localhost:5000/featured-rooms')
       .then((response) => {
-        // Assuming we want to display the top-rated rooms (filter by totalReviews)
-        const topRatedRooms = response.data.filter(room => room.totalReviews >= 0).slice(0, 6);
-        setRooms(topRatedRooms);
+        setRooms(response.data);
       })
       .catch((error) => {
         console.error('Error fetching rooms:', error);

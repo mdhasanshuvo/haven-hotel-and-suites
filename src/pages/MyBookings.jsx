@@ -25,7 +25,9 @@ const MyBookings = () => {
     useEffect(() => {
         if (user) {
             axios
-                .get(`https://hotel-booking-server-two.vercel.app/bookings/${user.email}`)
+                .get(`https://hotel-booking-server-two.vercel.app/bookings/${user.email}`,{
+                    withCredentials: true,
+                })
                 .then((response) => {
                     setBookings(response.data);
                 })

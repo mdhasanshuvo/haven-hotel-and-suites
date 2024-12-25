@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import React, { createContext, useEffect, useState } from "react";
 import { app } from "../firebase/firebase.config";
+import axios from "axios";
 
 export const AuthContext = createContext();
 
@@ -49,6 +50,42 @@ const AuthProvider = ({ children }) => {
             .finally(() => setLoading(false));
     };
 
+
+    useEffect(() => {
+        const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+            setUser(currentUser);
+
+            if (currentUser?.email) {
+                const user = { email: currentUser.email };
+
+                axios.post('https://hotel-booking-server-two.vercel.app/jwt', user, {withCredentials: true})
+                    .then(res => {
+                        console.log(res.data);
+                        setLoading(false);
+                    });
+
+            }
+            else{
+                axios.post('https://hotel-booking-server-two.vercel.app/logout',{},{
+                    withCredentials: true,
+                })
+                .then(res => {
+                    console.log('logout ',res.data);
+                    setLoading(false);
+                })
+            }
+
+            
+        })
+
+        return () => {
+            unSubscribe();
+        }
+
+    }, []);
+
+
+
     const authValues = {
         user,
         setUser,
@@ -62,13 +99,6 @@ const AuthProvider = ({ children }) => {
         email,
         setEmail,
     }
-
-    useEffect(() => {
-        onAuthStateChanged(auth, (currentUser) => {
-            setUser(currentUser);
-            setLoading(false);
-        })
-    }, []);
 
     return (
         <AuthContext.Provider value={authValues}>

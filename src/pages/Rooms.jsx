@@ -12,7 +12,7 @@ const Rooms = () => {
     // Fetch rooms with price filter if available
     const fetchRooms = () => {
       axios
-        .get('http://localhost:5000/rooms', {
+        .get('https://hotel-booking-server-two.vercel.app/rooms', {
           params: {
             minPrice,  
             maxPrice,  

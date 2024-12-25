@@ -6,6 +6,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import Rating from 'react-rating'; // For implementing rating input
 import DatePicker from 'react-datepicker';
 import useAxios from '../Hook/useAxios';
+import moment from 'moment';
 
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
@@ -38,7 +39,24 @@ const MyBookings = () => {
         }
     }, [user]);
 
-    const handleCancelBooking = (bookingId) => {
+
+    const handleCancelBooking = (bookingId, bookingStartDate) => {
+        const currentDate = moment().startOf('day');  // Set to start of the day
+        const bookingDate = moment(bookingStartDate, 'YYYY-MM-DD').startOf('day');  // Set to start of the day
+        const oneDayBeforeBooking = bookingDate.clone().subtract(1, 'days');
+
+        console.log('heyyyyy', currentDate, bookingDate, oneDayBeforeBooking, bookingStartDate)
+
+        if (!currentDate.isBefore(oneDayBeforeBooking)) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Cancellation Not Allowed',
+                text: 'You can only cancel your booking at least 1 day before the booking date.',
+                confirmButtonText: 'OK',
+            });
+            return;
+        }
+
         Swal.fire({
             title: 'Are you sure?',
             text: 'Do you want to cancel this booking?',
@@ -49,7 +67,7 @@ const MyBookings = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 axios
-                    .delete(`http://localhost:5000/bookings/${bookingId}`)
+                    .delete(`https://hotel-booking-server-two.vercel.app/bookings/${bookingId}`)
                     .then(() => {
                         setBookings(bookings.filter((booking) => booking._id !== bookingId));
                         Swal.fire('Cancelled!', 'Your booking has been cancelled.', 'success');
@@ -61,6 +79,9 @@ const MyBookings = () => {
             }
         });
     };
+
+
+
 
     const handleUpdateDate = (bookingId) => {
         setUpdatingBookingId(bookingId);
@@ -88,7 +109,7 @@ const MyBookings = () => {
             end: endDate.toISOString().split('T')[0],
         };
 
-        axios.put(`http://localhost:5000/bookings/${updatingBookingId}`, updatedDate)
+        axios.put(`https://hotel-booking-server-two.vercel.app/bookings/${updatingBookingId}`, updatedDate)
             .then(() => {
                 Swal.fire({
                     icon: 'success',
@@ -132,7 +153,7 @@ const MyBookings = () => {
         }
 
         axios
-            .post('http://localhost:5000/reviews', {
+            .post('https://hotel-booking-server-two.vercel.app/reviews', {
                 bookingId: reviewBookingId,
                 roomId: reviewRoomId,
                 review: {
@@ -197,7 +218,7 @@ const MyBookings = () => {
                                     </td>
                                     <td className="px-3 py-2 sm:px-6 sm:py-4 space-x-2 flex flex-col sm:flex-row items-center gap-1">
                                         <button
-                                            onClick={() => handleCancelBooking(booking?._id)}
+                                            onClick={() => handleCancelBooking(booking?._id, booking?.startDate)}
                                             className="px-2 sm:px-4 py-1 sm:py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg transition-all duration-200"
                                         >
                                             Cancel
@@ -235,7 +256,7 @@ const MyBookings = () => {
                                 </p>
                                 <div className="mt-4 space-x-2">
                                     <button
-                                        onClick={() => handleCancelBooking(booking?._id)}
+                                        onClick={() => handleCancelBooking(booking?._id, booking?.startDate)}
                                         className="px-4 py-2 text-white bg-red-500 hover:bg-red-600 rounded-lg transition-all duration-200"
                                     >
                                         Cancel

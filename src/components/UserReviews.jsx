@@ -7,7 +7,7 @@ const UserReviews = () => {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/review')
+    axios.get('https://hotel-booking-server-two.vercel.app/review')
       .then(response => {
         setReviews(response.data); // Ensure the data is sorted as per the backend
       })

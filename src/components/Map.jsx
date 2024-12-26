@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import 'leaflet/dist/leaflet.css';
 
 const HotelMap = () => {
-  const position = [22.35344, 91.86037]; 
+  const position = [21.433598, 91.96943];
 
   return (
     <section className="py-16 lg:py-32 bg-gradient-to-r from-blue-500 to-indigo-700">

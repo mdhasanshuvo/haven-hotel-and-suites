@@ -168,7 +168,7 @@ const RoomDetails = () => {
                                         {/* User Avatar */}
                                         <div className="w-16 h-16 rounded-full overflow-hidden mr-4 mb-4 md:mb-0">
                                             <img
-                                                src={review?.review?.userPhoto || 'https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png'}
+                                                src={review?.review?.userPhoto || 'https://i.ibb.co.com/wr2MbDw/free-user-icon-3296-thumb.png'}
                                                 alt={review?.review?.username}
                                                 className="w-full h-full object-cover"
                                             />

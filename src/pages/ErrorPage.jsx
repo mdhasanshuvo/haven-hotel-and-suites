@@ -23,7 +23,7 @@ const ErrorPage = () => {
 
       <div className="mt-12">
         <img
-          src="https://media.giphy.com/media/1xVCEk3ORktJSMRGE3/giphy.gif" // Exciting GIF of your choice
+          src="https://i.ibb.co.com/rtrqGrn/fa-Q96s-Lh7n-H5-P91-OLn.webp" 
           alt="Not Found Illustration"
           className="max-w-full mx-auto rounded-lg shadow-lg animate__animated animate__fadeInUp"
         />

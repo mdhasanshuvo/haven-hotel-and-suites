@@ -7,17 +7,17 @@ const HotelFacilities = () => {
         },
         {
             name: 'Swimming Pool',
-            icon: 'https://c8.alamy.com/comp/2C162JW/swimming-logo-with-text-space-for-your-slogan-tag-line-vector-illustration-2C162JW.jpg',
+            icon: 'https://i.ibb.co.com/6PC6sy2/swimming-logo-with-text-space-for-your-slogan-tag-line-vector-illustration-2-C162-JW.jpg',
             description: 'Relax and unwind at our outdoor pool with stunning views.',
         },
         {
             name: 'Spa & Wellness',
-            icon: 'https://st4.depositphotos.com/14431644/21221/i/450/depositphotos_212217520-stock-illustration-handwriting-text-spa-wellness-concept.jpg',
+            icon: 'https://i.ibb.co.com/j51dSrX/depositphotos-212217520-stock-illustration-handwriting-text-spa-wellness-concept.webp',
             description: 'Enjoy a full range of spa services to rejuvenate your body and mind.',
         },
         {
             name: 'Fitness Center',
-            icon: 'https://c8.alamy.com/comp/K9BB6J/fitness-club-logo-with-exercising-athletic-man-and-woman-isolated-K9BB6J.jpg',
+            icon: 'https://i.ibb.co.com/RzvGtC3/fitness-club-logo-with-exercising-athletic-man-and-woman-isolated-K9-BB6-J.jpg',
             description: 'Keep fit during your stay with our state-of-the-art gym facilities.',
         },
     ];

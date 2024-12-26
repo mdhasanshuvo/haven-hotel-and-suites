@@ -20,7 +20,7 @@ const Navbar = () => {
     );
 
     const { pathname } = useLocation();
-
+    
     return (
         <div className={`bg-base-100 ${pathname === '/auth/login' || pathname === '/auth/register' ? 'h-36' : ''} container mx-auto px-2`}>
             <div className="navbar">

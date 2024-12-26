@@ -3,17 +3,17 @@ const SpecialOffers = () => {
         {
             title: 'Summer Special: 25% Off!',
             description: 'Book your stay for the summer and save 25%. Limited time offer!',
-            image: 'https://static.vecteezy.com/system/resources/previews/022/689/372/original/summer-special-offer-banner-template-with-product-podium-under-parasol-and-palm-leafs-vector.jpg',
+            image: 'https://i.ibb.co.com/0mV3RYh/summer-special-offer-banner-template-with-product-podium-under-parasol-and-palm-leafs-vector.jpg',
         },
         {
             title: 'Family Getaway Package',
             description: 'A fun-filled family package with discounts for kids. The perfect family vacation!',
-            image: 'https://www.estadiahotel.com/public/offer/images/20190701_EST_Website_FamilyPackage_Thumbnail-01.jpg',
+            image: 'https://i.ibb.co.com/Gnsj5PY/20190701-EST-Website-Family-Package-Thumbnail-01.jpg',
         },
         {
             title: 'Weekend: 2 Nights for 1 Price',
             description: 'Enjoy a relaxing weekend escape with our exclusive weekend offer.',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW1jGewIRrOgm17lmfzU_hVUb6PN7QTvld1g&s',
+            image: 'https://i.ibb.co.com/68jr5b0/images.jpg',
         },
     ];
 

@@ -16,7 +16,7 @@ const AboutUs = () => {
                         Welcome to Haven Hotel and Suites
                     </h1>
                     <img
-                        src="https://www.rosenshinglecreek.com/wp-content/uploads/hotel-exterior-night.jpg"
+                        src="https://i.ibb.co.com/Jmr4tgW/hotel-exterior-night.jpg"
                         alt="Hotel Exterior"
                         className="w-full h-96 object-cover rounded-xl"
                     />
@@ -27,7 +27,7 @@ const AboutUs = () => {
                     <h2 className="text-3xl font-semibold text-gray-800 text-center mb-6">Our Story</h2>
                     <div className="flex flex-col md:flex-row items-center space-x-6">
                         <img
-                            src="https://i.pinimg.com/originals/3d/65/98/3d6598f418272467bfe4d184adeb399d.jpg"
+                            src="https://i.ibb.co.com/3svcCjS/3d6598f418272467bfe4d184adeb399d.jpg"
                             alt="Hotel Interior"
                             className="w-full md:w-1/2 h-64 object-cover rounded-lg shadow-lg"
                         />
@@ -81,7 +81,7 @@ const AboutUs = () => {
                         {/* Team Member 1 */}
                         <div className="w-72 bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
                             <img
-                                src="https://via.placeholder.com/300x300"
+                                src="https://i.ibb.co.com/TvmpV0N/d38f440cb3654d71701e6335a35e932b.webp"
                                 alt="Hotel Manager"
                                 className="w-full h-64 object-cover"
                             />
@@ -94,7 +94,7 @@ const AboutUs = () => {
                         {/* Team Member 2 */}
                         <div className="w-72 bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
                             <img
-                                src="https://via.placeholder.com/300x300"
+                                src="https://i.ibb.co.com/SQfZF5Z/luxury-hotel-receptionist-869741-1113.jpg"
                                 alt="Customer Service"
                                 className="w-full h-64 object-cover"
                             />
@@ -107,7 +107,7 @@ const AboutUs = () => {
                         {/* Team Member 3 */}
                         <div className="w-72 bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition">
                             <img
-                                src="https://via.placeholder.com/300x300"
+                                src="https://i.ibb.co.com/LrjqVy5/image-832x1024.png"
                                 alt="Head Chef"
                                 className="w-full h-64 object-cover"
                             />

@@ -47,7 +47,7 @@ const UserReviews = () => {
                 <div className="flex justify-center mb-6">
                   <img
                     className="w-24 h-24 rounded-full object-cover border-4 border-accent"
-                    src={item?.review?.userPhoto || 'https://www.iconpacks.net/icons/2/free-user-icon-3296-thumb.png'}
+                    src={item?.review?.userPhoto || 'https://i.ibb.co.com/wr2MbDw/free-user-icon-3296-thumb.png'}
                     alt={item?.review?.username}
                   />
                 </div>

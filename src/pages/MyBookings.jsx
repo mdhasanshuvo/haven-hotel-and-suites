@@ -22,7 +22,7 @@ const MyBookings = () => {
     });
     const [reviewBookingId, setReviewBookingId] = useState(null);
     const [reviewRoomId, setReviewRoomId] = useState(null);
-    const [isTableView, setIsTableView] = useState(true);
+    const [isTableView, setIsTableView] = useState(false);
 
     const axiosSecure = useAxios();
 
@@ -202,6 +202,7 @@ const MyBookings = () => {
                     <table className="min-w-full table-auto bg-white border border-gray-200 rounded-lg shadow-md">
                         <thead>
                             <tr className="bg-gray-100 text-left text-sm font-medium text-gray-600">
+                                <th className="px-3 py-2 sm:px-6 sm:py-4">Image</th>
                                 <th className="px-3 py-2 sm:px-6 sm:py-4">Name</th>
                                 <th className="px-3 py-2 sm:px-6 sm:py-4">Price</th>
                                 <th className="px-3 py-2 sm:px-6 sm:py-4">Booking Date</th>
@@ -211,6 +212,13 @@ const MyBookings = () => {
                         <tbody className="text-sm text-gray-700">
                             {bookings.map((booking) => (
                                 <tr key={booking._id} className="border-t hover:bg-gray-50">
+                                    <td className="px-3 py-2 sm:px-6 sm:py-4">
+                                        <img
+                                            src={booking?.roomImage}
+                                            alt={`${booking?.roomName} Image`}
+                                            className="w-16 h-16 object-cover rounded-lg"
+                                        />
+                                    </td>
                                     <td className="px-3 py-2 sm:px-6 sm:py-4">{booking?.roomName}</td>
                                     <td className="px-3 py-2 sm:px-6 sm:py-4">${booking?.price}</td>
                                     <td className="px-3 py-2 sm:px-6 sm:py-4">
@@ -247,6 +255,11 @@ const MyBookings = () => {
                                 key={booking._id}
                                 className="bg-white border border-gray-200 rounded-lg shadow-md p-4"
                             >
+                                <img
+                                    src={booking?.roomImage}
+                                    alt={`${booking?.roomName} Image`}
+                                    className="w-full h-40 object-cover rounded-lg mb-4"
+                                />
                                 <h2 className="text-lg font-semibold">{booking?.roomName}</h2>
                                 <p className="text-sm text-gray-600">
                                     Price: <span className="font-medium">${booking?.price}</span>
@@ -278,6 +291,7 @@ const MyBookings = () => {
                         ))}
                     </div>
                 )}
+
 
 
                 {/* Modal for updating booking date */}

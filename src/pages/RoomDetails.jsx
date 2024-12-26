@@ -19,6 +19,7 @@ const RoomDetails = () => {
         endDate: '',
         price: 0,
         roomName: '',
+        roomImage: [],
     });
     const [isRoomBooked, setIsRoomBooked] = useState(false);
     const [reviews, setReviews] = useState([]);
@@ -72,6 +73,7 @@ const RoomDetails = () => {
                 userEmail: user.email,
                 roomId: room._id,
                 roomName: room.name,
+                roomImage: room.images[0],
                 price: room.price,
             });
         }

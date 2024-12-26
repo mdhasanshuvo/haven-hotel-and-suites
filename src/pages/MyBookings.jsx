@@ -7,6 +7,7 @@ import Rating from 'react-rating'; // For implementing rating input
 import DatePicker from 'react-datepicker';
 import useAxios from '../Hook/useAxios';
 import moment from 'moment';
+import { Helmet } from 'react-helmet';
 
 const MyBookings = () => {
     const { user } = useContext(AuthContext);
@@ -178,6 +179,9 @@ const MyBookings = () => {
     return (
         <div className='bg-slate-50'>
             <div className="container mx-auto px-4 py-8 min-h-[73vh]">
+                <Helmet>
+                    <title>Bookings | Haven Hotel & Suites</title>
+                </Helmet>
                 <div className="flex justify-between items-center mb-6">
                     <h1 className="text-3xl font-semibold text-primary">My Bookings</h1>
                     <div className="flex items-center space-x-2">

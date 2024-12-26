@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import { Helmet } from 'react-helmet';
 
 const Rooms = () => {
   const [rooms, setRooms] = useState([]);
@@ -14,15 +15,15 @@ const Rooms = () => {
       axios
         .get('https://hotel-booking-server-two.vercel.app/rooms', {
           params: {
-            minPrice,  
-            maxPrice,  
+            minPrice,
+            maxPrice,
           },
         })
         .then((response) => setRooms(response.data)) // Set the response data
         .catch((error) => console.error('Error fetching rooms:', error));
     };
 
-    fetchRooms(); 
+    fetchRooms();
   }, [minPrice, maxPrice]);
 
   const handleRoomClick = (roomId) => {
@@ -31,6 +32,9 @@ const Rooms = () => {
 
   return (
     <div className="bg-gray-50 min-h-screen py-10 lg:py-16">
+      <Helmet>
+        <title>Rooms | Haven Hotel & Suites</title>
+      </Helmet>
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
           Explore Our Rooms 🛌
@@ -43,7 +47,7 @@ const Rooms = () => {
             <input
               type="number"
               value={minPrice}
-              onChange={(e) => setMinPrice(e.target.value)} 
+              onChange={(e) => setMinPrice(e.target.value)}
               className="input input-bordered w-full max-w-xs"
               placeholder="Min Price"
             />

@@ -7,6 +7,7 @@ import HotelFacilities from '../components/HotelFacilities';
 import Countdown from '../components/Countdown';
 import HotelMap from '../components/Map';
 import SpecialOffersModal from '../components/SpecialOffersModal';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     const [isModalVisible, setIsModalVisible] = useState(false);
@@ -21,6 +22,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Home | Haven Hotel & Suites</title>
+            </Helmet>
             <SpecialOffersModal
                 isVisible={isModalVisible}
                 onClose={() => setIsModalVisible(false)}

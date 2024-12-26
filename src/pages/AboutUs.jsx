@@ -1,8 +1,12 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
     return (
         <div className="bg-gray-50 text-gray-800">
+            <Helmet>
+                <title>About | Haven Hotel & Suites</title>
+            </Helmet>
             <div className="max-w-screen-xl mx-auto px-6 sm:px-8 py-12">
 
                 {/* Hero Section */}

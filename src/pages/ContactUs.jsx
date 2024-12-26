@@ -1,8 +1,13 @@
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
   return (
     <div className="bg-gray-50 text-gray-800">
+
+      <Helmet>
+        <title>Contact | Haven Hotel & Suites</title>
+      </Helmet>
 
       {/* Hero Section */}
       <section className="relative">

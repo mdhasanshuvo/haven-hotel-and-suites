@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
 import 'react-datepicker/dist/react-datepicker.css';  // Ensure correct path for styles
 import DatePicker from 'react-datepicker';
+import { Helmet } from 'react-helmet';
 
 const RoomDetails = () => {
     const { id } = useParams();
@@ -106,6 +107,9 @@ const RoomDetails = () => {
     return (
         <div>
             <main className="min-h-screen py-12 px-6 bg-base-200">
+                <Helmet>
+                    <title>Rooms | Haven Hotel & Suites</title>
+                </Helmet>
                 <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
                     <div className="flex flex-col md:flex-row">
                         <div className="w-full md:w-1/2 p-6">

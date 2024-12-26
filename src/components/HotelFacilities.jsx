@@ -2,7 +2,7 @@ const HotelFacilities = () => {
     const facilities = [
         {
             name: 'Free Wi-Fi',
-            icon: 'https://media.istockphoto.com/id/491920436/photo/free-wifi-sign.jpg?s=612x612&w=0&k=20&c=WeeQWnJuBJ9ngvhrp3c_bay4HpgIJyvynBnz-YH1z_0=',
+            icon: 'https://i.ibb.co.com/mbTj9xs/istockphoto-491920436-612x612.jpg',
             description: 'Stay connected with our high-speed Wi-Fi throughout the hotel.',
         },
         {

@@ -1,12 +1,13 @@
 // import { Helmet } from 'react-helmet';
+import { Helmet } from 'react-helmet';
 import { Link } from 'react-router-dom';
 
 const ErrorPage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-100 to-gray-200 flex flex-col justify-center items-center">
-      {/* <Helmet>
+      <Helmet>
         <title>ERROR 404</title>
-      </Helmet> */}
+      </Helmet>
       <h1 className="text-7xl font-bold text-indigo-600 animate__animated animate__bounceIn mb-4">404</h1>
       <h2 className="text-4xl font-semibold text-gray-800 mb-2">Page Not Found</h2>
       <p className="text-lg text-gray-600 mb-8">

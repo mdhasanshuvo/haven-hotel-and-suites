@@ -3,6 +3,7 @@ import { FaGoogle } from "react-icons/fa";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../provider/AuthProvider';
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
     const { signIn, setUser, googleAuth, email, setEmail } = useContext(AuthContext);
@@ -74,9 +75,9 @@ const Login = () => {
 
     return (
         <div className="min-h-screen flex justify-center items-center -mt-20 bg-[#F3F3F3]">
-            {/* <Helmet>
-                <title>Login | Haven Hotel and Suites</title>
-            </Helmet> */}
+            <Helmet>
+                <title>Login | Haven Hotel & Suites</title>
+            </Helmet>
             <div className="card bg-base-100 w-full max-w-lg shrink-0 rounded-none p-10 my-1">
                 <h2 className="text-2xl font-semibold text-center">Login your account</h2>
                 <form onSubmit={handleSubmit} className="card-body">

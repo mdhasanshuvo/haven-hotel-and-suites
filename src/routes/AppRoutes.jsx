@@ -11,6 +11,7 @@ import AboutUs from '../pages/AboutUs';
 import ContactUs from '../pages/ContactUs';
 import MyBookings from '../pages/MyBookings';
 import PrivateRoute from './PrivateRoute';
+import Gallery from '../pages/Gallery';
 
 const AppRoutes = createBrowserRouter([
     {
@@ -28,6 +29,10 @@ const AppRoutes = createBrowserRouter([
             {
                 path: '/rooms/:id',
                 element: <RoomDetails></RoomDetails>,
+            },
+            {
+                path: '/gallery',
+                element: <Gallery></Gallery>
             },
             {
                 path: '/about',

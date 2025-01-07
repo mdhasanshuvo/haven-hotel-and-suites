@@ -60,7 +60,5 @@ Ensure you have the following installed on your system:
 **Clone the Repository**  
    Clone the project repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/haven-hotel-and-suites.git
+   git clone https://github.com/mdhasanshuvo/haven-hotel-and-suites.git
    cd haven-hotel-and-suites
-
----

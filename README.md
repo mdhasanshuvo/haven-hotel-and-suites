@@ -47,3 +47,20 @@ This project is built with modern web development technologies and libraries:
 - `🌀 swiper`: Advanced, modern sliders for galleries and features.
 
 ---
+
+## 🏃 How to Run Locally
+
+### Prerequisites
+Ensure you have the following installed on your system:
+- **Node.js** (v14+ recommended)
+- **npm** or **yarn**
+
+### Steps to Run Locally
+
+**Clone the Repository**  
+   Clone the project repository to your local machine:
+   ```bash
+   git clone https://github.com/your-username/haven-hotel-and-suites.git
+   cd haven-hotel-and-suites
+
+---

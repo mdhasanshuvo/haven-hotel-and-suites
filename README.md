@@ -46,8 +46,6 @@ This project is built with modern web development technologies and libraries:
 - `📸 react-slick & slick-carousel`: Implementing a sleek image carousel.
 - `🌀 swiper`: Advanced, modern sliders for galleries and features.
 
----
-
 ## 🏃 How to Run Locally
 
 ### Prerequisites

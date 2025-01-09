@@ -5,7 +5,9 @@ const Countdown = () => {
   const sectionRef = useRef(null);
 
   useEffect(() => {
-    const targetDate = new Date("2025-01-12T00:00:00Z"); // Replace with your target date
+    const today = new Date();
+    const targetDate = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+
     const interval = setInterval(() => {
       const now = new Date();
       const timeDiff = targetDate - now;

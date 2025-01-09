@@ -19,8 +19,8 @@ const Footer = () => {
           <ul className="space-y-2">
             <li><a href="/rooms" className="text-sm hover:text-gray-400">Rooms</a></li>
             <li><a href="/about" className="text-sm hover:text-gray-400">About Us</a></li>
-            <li><a href="/booking" className="text-sm hover:text-gray-400">Book Now</a></li>
-            <li><a href="/privacy-policy" className="text-sm hover:text-gray-400">Privacy Policy</a></li>
+            <li><a href="/rooms" className="text-sm hover:text-gray-400">Book Now</a></li>
+            <li><a href="/contact" className="text-sm hover:text-gray-400">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -28,10 +28,10 @@ const Footer = () => {
         <div className="space-y-4">
           <h3 className="text-2xl font-semibold">Follow Us</h3>
           <div className="flex space-x-4">
-            <a href="#" className="text-xl hover:text-gray-400"><FaFacebookF /></a>
-            <a href="#" className="text-xl hover:text-gray-400"><FaInstagram /></a>
-            <a href="#" className="text-xl hover:text-gray-400"><FaTwitter /></a>
-            <a href="#" className="text-xl hover:text-gray-400"><FaLinkedinIn /></a>
+            <a href="https://www.facebook.com/" className="text-xl hover:text-gray-400"  target="_blank"><FaFacebookF /></a>
+            <a href="https://www.instagram.com/" className="text-xl hover:text-gray-400"  target="_blank"><FaInstagram /></a>
+            <a href="https://x.com/" className="text-xl hover:text-gray-400"  target="_blank"><FaTwitter /></a>
+            <a href="https://www.linkedin.com/in/mohammed-hasan-/" className="text-xl hover:text-gray-400"  target="_blank"><FaLinkedinIn /></a>
           </div>
         </div>
 

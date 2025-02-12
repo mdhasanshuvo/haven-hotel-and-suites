@@ -84,7 +84,7 @@ const Navbar = () => {
                             </Link>
                         )}
 
-                        <label className="swap swap-rotate" >
+                        <label className="swap swap-rotate ml-1" >
                             {/* this hidden checkbox controls the state */}
                             <input type="checkbox" className="theme-controller" value="synthwave" onClick={toggleTheme} />
 

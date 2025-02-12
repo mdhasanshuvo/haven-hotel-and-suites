@@ -51,24 +51,24 @@ const AuthProvider = ({ children }) => {
             if (currentUser?.email) {
                 const user = { email: currentUser.email };
 
-                axios.post('https://hotel-booking-server-two.vercel.app/jwt', user, {withCredentials: true})
+                axios.post('https://hotel-booking-server-two.vercel.app/jwt', user, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                         setLoading(false);
                     });
 
             }
-            else{
-                axios.post('https://hotel-booking-server-two.vercel.app/logout',{},{
+            else {
+                axios.post('https://hotel-booking-server-two.vercel.app/logout', {}, {
                     withCredentials: true,
                 })
-                .then(res => {
-                    console.log('logout ',res.data);
-                    setLoading(false);
-                })
+                    .then(res => {
+                        console.log('logout ', res.data);
+                        setLoading(false);
+                    })
             }
 
-            
+
         })
 
         return () => {
@@ -76,6 +76,15 @@ const AuthProvider = ({ children }) => {
         }
 
     }, []);
+
+    const [theme, setTheme] = React.useState('light');
+    const toggleTheme = () => {
+        setTheme(theme === 'dark' ? 'light' : 'dark');
+    };
+    // initially set the theme and "listen" for changes to apply them to the HTML tag
+    React.useEffect(() => {
+        document.querySelector('html').setAttribute('data-theme', theme);
+    }, [theme]);
 
 
 
@@ -90,6 +99,8 @@ const AuthProvider = ({ children }) => {
         updateUser,
         email,
         setEmail,
+        theme,
+        toggleTheme
     }
 
     return (

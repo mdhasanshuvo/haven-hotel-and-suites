@@ -9,11 +9,6 @@ const Rooms = () => {
   const [maxPrice, setMaxPrice] = useState('');
   const navigate = useNavigate();
 
-  if (!rooms) {
-    <div className="flex min-h-screen justify-center items-center">
-      <span className="loading loading-bars loading-lg"></span>
-    </div>
-  }
   useEffect(() => {
     // Fetch rooms with price filter if available
     const fetchRooms = () => {
@@ -77,6 +72,13 @@ const Rooms = () => {
           </button>
         </div>
 
+        {
+          rooms.length === 0 &&
+          < div className="flex min-h-screen justify-center items-center">
+            <span className="loading loading-bars loading-lg"></span>
+          </div>
+        }
+
         {/* Rooms List */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {rooms.map((room) => (
@@ -110,7 +112,7 @@ const Rooms = () => {
           ))}
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 

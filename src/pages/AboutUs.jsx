@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const AboutUs = () => {
     return (
-        <div className="bg-gray-50 text-gray-800">
+        <div className="bg-base-300">
             <Helmet>
                 <title>About | Haven Hotel & Suites</title>
             </Helmet>
@@ -12,7 +12,7 @@ const AboutUs = () => {
                 {/* Hero Section */}
                 <section className="text-center mb-12 sm:mb-28">
 
-                    <h1 className="text-5xl font-extrabold text-gray-900 leading-tight mb-8">
+                    <h1 className="text-5xl font-extrabold text-primary leading-tight mb-8">
                         Welcome to Haven Hotel and Suites
                     </h1>
                     <img
@@ -42,7 +42,7 @@ const AboutUs = () => {
 
                 {/* Our Values Section */}
                 <section className="mb-12 sm:mb-28">
-                    <h2 className="text-3xl font-semibold text-gray-800 text-center mb-8">
+                    <h2 className="text-3xl font-semibold text-primary text-center mb-8">
                         Our Values
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
@@ -74,7 +74,7 @@ const AboutUs = () => {
 
                 {/* Meet the Team Section */}
                 <section className="text-center mb-12 sm:mb-28">
-                    <h2 className="text-3xl font-semibold text-gray-800 mb-8">
+                    <h2 className="text-3xl font-semibold text-primary mb-8">
                         Meet Our Team
                     </h2>
                     <div className="flex flex-wrap justify-center gap-8">

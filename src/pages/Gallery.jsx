@@ -38,10 +38,10 @@ const Gallery = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-gray-50 py-10">
+        <div className="min-h-screen bg-base-300 py-10">
             <div className="max-w-6xl mx-auto px-4">
                 <motion.h1
-                    className="text-4xl sm:text-5xl font-bold text-center mb-12 text-black"
+                    className="text-4xl sm:text-5xl font-bold text-center mb-12 text-primary"
                     initial={{ opacity: 0, y: -50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
@@ -56,7 +56,7 @@ const Gallery = () => {
                         whileInView={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
                     >
-                        <h2 className="text-3xl font-semibold text-black mb-6">{category.title}</h2>
+                        <h2 className="text-3xl font-semibold text-gray-600 mb-6">{category.title}</h2>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                             {category.images.map((image, index) => (
                                 <motion.div

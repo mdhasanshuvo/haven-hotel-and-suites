@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet';
 
 const ContactUs = () => {
   return (
-    <div className="bg-gray-50 text-gray-800">
+    <div className="bg-base-300">
 
       <Helmet>
         <title>Contact | Haven Hotel & Suites</title>
@@ -23,9 +23,9 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Information Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-base-100">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-8 text-center">
-          <h2 className="text-4xl font-semibold text-gray-800 mb-12">Contact Information</h2>
+          <h2 className="text-4xl font-semibold text-primary mb-12">Contact Information</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
             {/* Phone */}
             <div className="bg-gray-100 p-8 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
@@ -49,19 +49,19 @@ const ContactUs = () => {
       </section>
 
       {/* Contact Form Section */}
-      <section className="bg-gray-100 py-16">
+      <section className="bg-base-300 py-16">
         <div className="max-w-screen-xl mx-auto px-6 sm:px-8">
-          <h2 className="text-4xl font-semibold text-gray-800 text-center mb-12">Send Us a Message</h2>
+          <h2 className="text-4xl font-semibold text-primary text-center mb-12">Send Us a Message</h2>
           <div className="flex justify-center">
             <form
               action="mailto:contact@Havenhotel.com"
               method="POST"
               encType="text/plain"
-              className="w-full max-w-2xl bg-white p-10 rounded-lg shadow-lg"
+              className="w-full max-w-2xl bg-base-100 p-10 rounded-lg shadow-lg"
             >
               {/* Name Field */}
               <div className="mb-6">
-                <label htmlFor="name" className="block text-lg font-semibold text-gray-800 mb-2">
+                <label htmlFor="name" className="block text-lg font-semibold mb-2">
                   Full Name
                 </label>
                 <input
@@ -75,7 +75,7 @@ const ContactUs = () => {
 
               {/* Email Field */}
               <div className="mb-6">
-                <label htmlFor="email" className="block text-lg font-semibold text-gray-800 mb-2">
+                <label htmlFor="email" className="block text-lg font-semibold mb-2">
                   Email Address
                 </label>
                 <input
@@ -89,7 +89,7 @@ const ContactUs = () => {
 
               {/* Message Field */}
               <div className="mb-6">
-                <label htmlFor="message" className="block text-lg font-semibold text-gray-800 mb-2">
+                <label htmlFor="message" className="block text-lg font-semibold mb-2">
                   Your Message
                 </label>
                 <textarea

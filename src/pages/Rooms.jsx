@@ -31,19 +31,19 @@ const Rooms = () => {
   };
 
   return (
-    <div className="bg-gray-50 min-h-screen py-10 lg:py-16">
+    <div className="bg-base-300 min-h-screen py-10 lg:py-16">
       <Helmet>
         <title>Rooms | Haven Hotel & Suites</title>
       </Helmet>
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
+        <h2 className="text-4xl font-bold text-center text-primary mb-8">
           Explore Our Rooms 🛌
         </h2>
 
         {/* Price Filter Section */}
         <div className="mb-8 flex justify-center space-x-6">
           <div>
-            <label className="text-lg font-medium text-gray-700">Min Price</label>
+            <label className="text-lg font-medium text-gray-500">Min Price</label>
             <input
               type="number"
               value={minPrice}
@@ -54,7 +54,7 @@ const Rooms = () => {
           </div>
 
           <div>
-            <label className="text-lg font-medium text-gray-700">Max Price</label>
+            <label className="text-lg font-medium text-gray-500">Max Price</label>
             <input
               type="number"
               value={maxPrice}

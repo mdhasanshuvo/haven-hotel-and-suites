@@ -17,7 +17,7 @@ const FeaturedRooms = () => {
 
   return (
     <div className="my-16 lg:my-32 px-4 text-center container mx-auto">
-      <h2 className="text-3xl font-bold">Featured Rooms</h2>
+      <h2 className="text-3xl font-bold text-primary">Featured Rooms</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
         {rooms.map((room) => (
           <div key={room._id} className="rounded-lg overflow-hidden shadow-lg">

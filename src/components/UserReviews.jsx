@@ -17,10 +17,10 @@ const UserReviews = () => {
   }, []);
 
   return (
-    <section className="bg-gray-50 py-16 lg:py-32">
+    <section className="bg-base-100 py-16 lg:py-32">
       <div className="container mx-auto px-4 text-center">
         <h2 className="text-3xl lg:text-4xl font-bold text-primary mb-8">What Our Guests Say</h2>
-        <p className="text-lg text-gray-600 mb-12">
+        <p className="text-lg text-gray-500 mb-12">
           Our guests share their unforgettable experiences at our hotel. Read their stories and get inspired!
         </p>
 
@@ -70,9 +70,9 @@ const UserReviews = () => {
                     </svg>
                   ))}
                 </span>
-                <p className="text-xl text-gray-600 italic mb-3">"{item?.review?.comment}"</p>
+                <p className="text-xl text-gray-800 italic mb-3">"{item?.review?.comment}"</p>
                 <h3 className="text-xl font-semibold text-gray-800">{item?.review?.username}</h3>
-                <p className="text-sm text-gray-500">"Bangladesh"</p>
+                <p className="text-sm text-gray-800">"Bangladesh"</p>
               </div>
             </SwiperSlide>
           ))}

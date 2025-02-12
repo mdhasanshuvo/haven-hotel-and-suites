@@ -177,7 +177,7 @@ const MyBookings = () => {
     };
 
     return (
-        <div className='bg-slate-50'>
+        <div className='bg-base-300'>
             <div className="container mx-auto px-4 py-8 min-h-[73vh]">
                 <Helmet>
                     <title>Bookings | Haven Hotel & Suites</title>
@@ -186,14 +186,14 @@ const MyBookings = () => {
                     <h1 className="text-3xl font-semibold text-primary">My Bookings</h1>
                     <div className="flex items-center space-x-2">
                         <button
-                            className={`p-2 rounded-md ${isTableView ? 'bg-gray-200' : 'bg-primary text-white'
+                            className={`p-2 rounded-md ${isTableView ? 'bg-gray-200 text-black' : 'bg-primary text-white'
                                 }`}
                             onClick={() => setIsTableView(false)}
                         >
                             Card View
                         </button>
                         <button
-                            className={`p-2 rounded-md ${isTableView ? 'bg-primary text-white' : 'bg-gray-200'
+                            className={`p-2 rounded-md ${isTableView ? 'bg-primary text-white' : 'bg-gray-200 text-black'
                                 }`}
                             onClick={() => setIsTableView(true)}
                         >
@@ -264,7 +264,7 @@ const MyBookings = () => {
                                     alt={`${booking?.roomName} Image`}
                                     className="w-full h-40 object-cover rounded-lg mb-4"
                                 />
-                                <h2 className="text-lg font-semibold">{booking?.roomName}</h2>
+                                <h2 className="text-lg font-semibold text-gray-600">{booking?.roomName}</h2>
                                 <p className="text-sm text-gray-600">
                                     Price: <span className="font-medium">${booking?.price}</span>
                                 </p>
@@ -301,11 +301,11 @@ const MyBookings = () => {
                 {/* Modal for updating booking date */}
                 {isModalOpen && (
                     <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
-                        <div className="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Update Booking Dates</h2>
+                        <div className="bg-base-100 p-6 rounded-md shadow-lg w-full max-w-md">
+                            <h2 className="text-2xl font-bold text-primary mb-6 text-center">Update Booking Dates</h2>
 
                             <div className="flex flex-col space-y-4">
-                                <label className="text-sm font-medium text-gray-700">Start Date</label>
+                                <label className="text-sm font-medium text-gray-500">Start Date</label>
                                 <DatePicker
                                     selected={startDate}
                                     onChange={setStartDate}
@@ -313,7 +313,7 @@ const MyBookings = () => {
                                     minDate={new Date()}
                                     className="input input-bordered w-full border-2 border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-primary"
                                 />
-                                <label className="text-sm font-medium text-gray-700">End Date</label>
+                                <label className="text-sm font-medium text-gray-500">End Date</label>
                                 <DatePicker
                                     selected={endDate}
                                     onChange={setEndDate}
@@ -326,7 +326,7 @@ const MyBookings = () => {
                             <div className="flex justify-between mt-6">
                                 <button
                                     onClick={() => setIsModalOpen(false)}
-                                    className="btn btn-outline py-2 px-4 rounded-lg text-gray-700 font-semibold hover:bg-gray-100 transition duration-300 border-2 border-gray-300"
+                                    className="btn btn-outline py-2 px-4 rounded-lg text-gray-500 font-semibold hover:bg-gray-100 transition duration-300 border-2 border-gray-300"
                                 >
                                     Cancel
                                 </button>
@@ -343,26 +343,26 @@ const MyBookings = () => {
 
                 {/* Modal for posting a review */}
                 {reviewModalOpen && (
-                    <div className="fixed inset-0 bg-gray-500 bg-opacity-75 flex justify-center items-center z-50">
-                        <div className="bg-white p-6 rounded-md shadow-lg w-full max-w-md">
-                            <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Submit Your Review</h2>
+                    <div className="fixed inset-0 bg-gray-500 bg-opacity-50 flex justify-center items-center z-50">
+                        <div className="bg-base-100 p-6 rounded-md shadow-lg w-full max-w-md">
+                            <h2 className="text-2xl font-bold text-primary mb-6 text-center">Submit Your Review</h2>
 
                             <div className="flex flex-col space-y-4">
-                                <label className="text-sm font-medium text-gray-700">Username</label>
+                                <label className="text-sm font-medium text-gray-400">Username</label>
                                 <input
                                     type="text"
                                     value={user?.displayName}
                                     readOnly
                                     className="input input-bordered w-full border-2 border-gray-300 rounded-md p-2 bg-gray-100"
                                 />
-                                <label className="text-sm font-medium text-gray-700">Rating</label>
+                                <label className="text-sm font-medium text-gray-400">Rating</label>
                                 <Rating
                                     fractions={2}
                                     initialRating={reviewData.rating}
                                     onChange={(value) => setReviewData({ ...reviewData, rating: value })}
                                     className="text-yellow-400"
                                 />
-                                <label className="text-sm font-medium text-gray-700">Comment</label>
+                                <label className="text-sm font-medium text-gray-400">Comment</label>
                                 <textarea
                                     value={reviewData.comment}
                                     onChange={(e) => setReviewData({ ...reviewData, comment: e.target.value })}
@@ -374,7 +374,7 @@ const MyBookings = () => {
                             <div className="flex justify-between mt-6">
                                 <button
                                     onClick={() => setReviewModalOpen(false)}
-                                    className="btn btn-outline py-2 px-4 rounded-lg text-gray-700 font-semibold hover:bg-gray-100 transition duration-300 border-2 border-gray-300"
+                                    className="btn btn-outline py-2 px-4 rounded-lg text-gray-500 font-semibold hover:bg-gray-100 transition duration-300 border-2 border-gray-300"
                                 >
                                     Cancel
                                 </button>

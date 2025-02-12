@@ -110,7 +110,7 @@ const RoomDetails = () => {
                 <Helmet>
                     <title>Rooms | Haven Hotel & Suites</title>
                 </Helmet>
-                <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
+                <div className="max-w-5xl mx-auto bg-base-100 shadow-lg rounded-lg overflow-hidden">
                     <div className="flex flex-col md:flex-row">
                         <div className="w-full md:w-1/2 p-6">
                             <img
@@ -219,7 +219,7 @@ const RoomDetails = () => {
             {/* Booking Modal */}
             {modalOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50 transition-opacity duration-300 ease-in-out">
-                    <div className="bg-white rounded-lg shadow-xl w-11/12 max-w-lg transform transition-all duration-500 ease-in-out scale-95 hover:scale-100">
+                    <div className="bg-base-200 rounded-lg shadow-xl w-11/12 max-w-lg transform transition-all duration-500 ease-in-out scale-95 hover:scale-100">
                         <div className="p-8">
                             <h2 className="text-3xl font-semibold text-primary mb-6 text-center">Room Booking Summary</h2>
 
@@ -230,7 +230,7 @@ const RoomDetails = () => {
                                     alt={room?.name}
                                     className="rounded-lg w-full h-48 object-cover mb-4"
                                 />
-                                <p className="text-lg font-semibold text-gray-900 mb-2">{room?.name}</p>
+                                <p className="text-lg font-semibold text-gray-600 mb-2">{room?.name}</p>
                                 <p className="text-sm text-gray-600 mb-2">{room?.description}</p>
                                 <p className="text-sm text-gray-600 mb-2">
                                     <strong>Type:</strong> {room?.type}
@@ -248,7 +248,7 @@ const RoomDetails = () => {
 
                             {/* Amenities */}
                             <div className="mb-6">
-                                <h3 className="text-lg font-semibold text-gray-900 mb-2">Amenities:</h3>
+                                <h3 className="text-lg font-semibold text-gray-500 mb-2">Amenities:</h3>
                                 <ul className="list-disc list-inside text-sm text-gray-600 space-y-1">
                                     {room?.amenities?.map((amenity, index) => (
                                         <li key={index}>{amenity}</li>
@@ -258,7 +258,7 @@ const RoomDetails = () => {
 
                             {/* Booking Date Range */}
                             <div className="mb-6">
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Select Booking Date Range</label>
+                                <label className="block text-sm font-medium text-gray-500 mb-2">Select Booking Date Range</label>
                                 <div className="flex space-x-4">
                                     <DatePicker
                                         selected={selectedStartDate}

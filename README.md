@@ -1,41 +1,43 @@
 # 🏨 Haven Hotel & Suites  
 
-Welcome to the **Haven Hotel & Suites** project! This is a **MERN Stack** (MongoDB, Express.js, React.js, Node.js) based **responsive and interactive** hotel booking website designed to provide a seamless and luxurious online experience for potential guests.  
+Welcome to **Haven Hotel & Suites** – a **modern and intuitive hotel booking platform** built with the **MERN stack**. This project provides a seamless booking experience with **secure authentication, real-time availability, and interactive UI elements** to enhance user engagement.  
 
-With an intuitive interface, dynamic booking system, and engaging features, our platform enhances the way users explore and book hotel stays.  
 
 ---
 
 ## 🌍 Live Demo  
 
-🔗 **[Visit Haven Hotel & Suites](https://haven-hotel-and-suites.web.app) 🚀**  
+🔗 **[Visit Haven Hotel & Suites](https://haven-hotel-and-suites.web.app) 🚀** 
+
+![Project Screenshot](https://i.ibb.co.com/2YMhTGTf/2025-02-28-001227.png)  
 
 ---
 
 ## 📖 Project Overview  
 
-The **Haven Hotel & Suites** website is crafted to offer a premium digital experience for visitors by allowing them to:  
+**Haven Hotel & Suites** offers a user-friendly platform where visitors can:  
 
-✅ **Explore** hotel rooms, amenities, and services through an intuitive and visually rich interface.  
-✅ **Book** rooms effortlessly using a **dynamic reservation system** with real-time availability.  
-✅ **Authenticate Securely** with **JWT-based authentication** for enhanced security.  
-✅ **Engage** with features like interactive galleries, guest reviews, and location maps.  
+✅ **Browse** a collection of high-quality hotel rooms with images, descriptions, and pricing.  
+✅ **Book** rooms instantly with real-time availability checks.  
+✅ **Authenticate Securely** with email/password login or **Google authentication**.  
+✅ **Manage Bookings** – View, update, and cancel reservations.  
+✅ **Leave Reviews** – Share experiences by rating and reviewing booked rooms.  
+✅ **Enjoy an Optimized Experience** with animations, responsive design, and interactive elements.  
 
 ---
 
 ## ✨ Features  
 
 ### 🎯 Core Features  
-- 📱 **Fully Responsive Design** – Optimized for desktops, tablets, and mobile devices.  
-- 🛎️ **Dynamic Booking System** – Book, manage, and update reservations seamlessly.  
-- 🖼️ **Interactive Gallery** – Professional gallery showcasing hotel rooms, amenities, and events.  
-- 🗺️ **Integrated Maps** – View hotel location and nearby attractions using **Leaflet.js**.  
-- ⭐ **Guest Reviews & Ratings** – Share and read feedback from previous guests.  
-- 🎥 **Smooth Animations** – Enhanced user experience with **Framer Motion**.  
-- 📅 **Calendar Integration** – Effortless date selection for booking with a **date-picker component**.  
-- 🔐 **JWT Authentication** – Secure user authentication with **JSON Web Token (JWT)**.  
-- 🛠️ **Admin Dashboard** – Manage bookings, users, and rooms from a secure admin panel.  
-- 🌍 **RESTful API** – Backend built with Express.js & Node.js, following REST principles.  
+✔ **🌟 Fully Responsive Design** – Optimized for desktops, tablets, and mobile devices.  
+✔ **🔐 Secure Authentication** – Firebase authentication with **JWT-based authorization**.  
+✔ **🛎️ Dynamic Booking System** – Users can book, update, and cancel reservations.  
+✔ **📅 Date Picker Integration** – Easy date selection for room booking.  
+✔ **📝 Review & Rating System** – Users can submit and view ratings & reviews.  
+✔ **🗺️ Integrated Maps** – View hotel locations via **Leaflet.js**.  
+✔ **🎥 Smooth Animations** – Enhancing UX with **Framer Motion**.  
+✔ **🌍 RESTful API** – Built with Express.js & Node.js, following REST principles.  
+
 
 ---
 
@@ -45,8 +47,12 @@ The **Haven Hotel & Suites** website is crafted to offer a premium digital exper
 |--------------|-----------|
 | **Frontend** | React.js, Tailwind CSS, DaisyUI |
 | **Backend** | Node.js, Express.js |
-| **Database** | MongoDB (with Mongoose ORM) |
-| **Authentication** | JSON Web Tokens (JWT), Firebase Authentication |
+| **Database** | MongoDB  |
+| **Authentication** | Firebase, JWT |
+| **UI Enhancements** | Framer Motion, React Icons |
+| **State Management** | React Context API |
+| **Mapping** | React Leaflet |
+
 
 ---
 
@@ -83,8 +89,8 @@ Ensure you have the following installed on your system:
 
 #### 1️⃣ Clone the Repository  
 ```bash
-git clone https://github.com/mdhasanshuvo/haven-hotel-and-suites.git
-cd haven-hotel-and-suites
+git clone https://github.com/your-username/haven-hotel.git
+cd haven-hotel
 ```  
 
 #### 2️⃣ Install Dependencies  
@@ -133,15 +139,45 @@ If you encounter any issues:
 
 ---
 
-## 🔥 Final Notes  
+## 📸 Screenshots  
 
-- **Security Best Practices:**  
-  - **Never expose API keys** in the frontend.  
-  - Use **environment variables** for sensitive information.  
-  - Secure authentication with **JWT** for password hashing.  
-- **Performance Optimization:**  
-  - Implement **lazy loading** for images.  
-  - Use **React Query** for efficient data fetching.  
-  - Minify and compress assets for faster load times.  
+### 🌟 Homepage  
+![Homepage Screenshot](https://i.ibb.co.com/wrgB7CJy/Home-Page.png)  
+
+### 🛏️ Rooms Page  
+![Rooms Screenshot](https://i.ibb.co.com/d8n90z1/Rooms.png)  
+
+### 📅 Booking System  
+![Booking Screenshot](https://i.ibb.co.com/84RzrNWp/Booking.png)  
+
+### 🔐 Authentication  
+![Authentication Screenshot](https://i.ibb.co.com/mC6zMvsG/Login.png)  
+
+### ⭐ Review System  
+![Review Screenshot](https://i.ibb.co.com/tpGbcsyg/Review.png)  
+
+### ⭐ Gallery 
+![Gallery Screenshot](https://i.ibb.co.com/1tHtnXYT/Gallery.png)  
+
+### ⭐ About Us Page  
+![About-us Screenshot](https://i.ibb.co.com/BHjbFyc7/About.png)  
+
+---
+
+## 🔥 Security & Best Practices  
+
+- **Never expose API keys** in the frontend.  
+- Use **environment variables** for sensitive information.  
+- Secure authentication with **JWT**.  
+- Implement **role-based access control** for admin functionalities.  
+- Optimize **performance** with lazy loading, caching, and efficient database queries.  
+
+---
+
+## 🎯 Future Enhancements  
+ 
+✅ **Date Range Booking** – Allow booking for multiple days.  
+✅ **Promotions & Discounts** – Feature special offers and limited-time discounts.  
+✅ **Admin Dashboard** – Enable admin to manage users, bookings, and rooms.  
 
 ---
